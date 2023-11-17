@@ -25,6 +25,8 @@ public class ProductController: ControllerBase
         _subProductService = subProductService;
     }
     
+    
+    [AllowAnonymous]
     [HttpGet]
     public async Task<IEnumerable<ProductResource>> GetAllAsync()
     {
