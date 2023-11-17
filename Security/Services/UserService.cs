@@ -101,10 +101,10 @@ public class UserService: ImplUserService
     {
         var user = GetById(id);
         // Validate
-        if (_userRepository.ExistsByEmail(request.Email))
+        if (user.Email != request.Email && _userRepository.ExistsByEmail(request.Email))
             throw new AppException("Username '" + request.Email + "' is already taken");
         // Hash password if it was entered
-        if (!string.IsNullOrEmpty(request.Password))
+        if(!string.IsNullOrWhiteSpace(request.Password))
             user.Password = BCryptNet.HashPassword(request.Password);
         // Copy model to user and save
         _mapper.Map(request, user);
