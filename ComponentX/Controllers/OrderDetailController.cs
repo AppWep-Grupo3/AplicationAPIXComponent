@@ -6,9 +6,12 @@ using BackendXComponent.Shared.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using BackendXComponent.Security.Authorization.Attributes;
 
 namespace BackendXComponent.ComponentX.Controllers;
 
+
+[Authorize]
 [ApiController]
 [Route("api/v1/[controller]")]
 public class OrderDetailController : ControllerBase

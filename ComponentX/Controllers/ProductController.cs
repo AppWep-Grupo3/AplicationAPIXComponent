@@ -2,12 +2,13 @@ using AutoMapper;
 using BackendXComponent.ComponentX.Domain.Models;
 using BackendXComponent.ComponentX.Domain.Services.Communication;
 using BackendXComponent.ComponentX.Resources;
+using BackendXComponent.Security.Authorization.Attributes;
 using BackendXComponent.Shared.Extensions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BackendXComponent.ComponentX.Controllers;
 
-
+[Authorize]
 [ApiController]
 [Route("/api/v1/[controller]")]
 

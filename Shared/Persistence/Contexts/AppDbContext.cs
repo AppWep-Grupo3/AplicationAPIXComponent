@@ -1,5 +1,6 @@
 using BackendXComponent.Shared.Extensions;
 using BackendXComponent.ComponentX.Domain.Models;
+using BackendXComponent.Security.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace BackendXComponent.Shared.Persistence.Contexts
@@ -62,13 +63,14 @@ namespace BackendXComponent.Shared.Persistence.Contexts
             
             
             
-            builder.Entity<User>().ToTable("Users");
-            builder.Entity<User>().HasKey(p => p.Id);
-            builder.Entity<User>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<User>().Property(p => p.FirstName).IsRequired().HasMaxLength(500);
-            builder.Entity<User>().Property(p => p.LastName).IsRequired().HasMaxLength(500);
-            builder.Entity<User>().Property(p => p.Email).IsRequired().HasMaxLength(800);
-            builder.Entity<User>().Property(p => p.Password).IsRequired().HasMaxLength(800);
+            builder.Entity<Security.Domain.Models.User>().ToTable("Users");
+            builder.Entity<Security.Domain.Models.User>().HasKey(p => p.Id);
+            builder.Entity<Security.Domain.Models.User>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Security.Domain.Models.User>().Property(p => p.FirstName).IsRequired().HasMaxLength(500);
+            builder.Entity<Security.Domain.Models.User>().Property(p => p.LastName).IsRequired().HasMaxLength(500);
+            builder.Entity<Security.Domain.Models.User>().Property(p => p.Email).IsRequired().HasMaxLength(800);
+            //builder.Entity<Security.Domain.Models.User>().Property(p => p.Username).IsRequired().HasMaxLength(800);
+            //builder.Entity<User>().Property(p => p.Password).IsRequired().HasMaxLength(800);
             // Configuración de la relación entre User y Cart (uno a uno)
            
             

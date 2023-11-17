@@ -1,4 +1,6 @@
-﻿namespace BackendXComponent.ComponentX.Domain.Models;
+﻿using BackendXComponent.Security.Domain.Models;
+
+namespace BackendXComponent.ComponentX.Domain.Models;
 
 public class Order
 {

@@ -2,10 +2,13 @@ using AutoMapper;
 using BackendXComponent.ComponentX.Domain.Services.Communication;
 using BackendXComponent.ComponentX.Resources;
 using BackendXComponent.ComponentX.Domain.Models;
+using BackendXComponent.Security.Authorization.Attributes;
 using BackendXComponent.Shared.Extensions;
 
 namespace BackendXComponent.ComponentX.Controllers;
 using Microsoft.AspNetCore.Mvc;
+
+[Authorize]
 [ApiController]
     [Route("api/v1/[controller]")]
     public class CartController : ControllerBase
